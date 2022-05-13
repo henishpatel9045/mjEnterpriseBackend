@@ -8,6 +8,8 @@ django = "*"
 pillow = "*"
 django-ckeditor = "*"
 django-debug-toolbar = "*"
+djangorestframework = "*"
+django-cleanup = "*"
 
 [requires]
 python_version = "3.10"
