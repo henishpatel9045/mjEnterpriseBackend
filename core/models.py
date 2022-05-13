@@ -22,6 +22,7 @@ class SiteInfo(models.Model):
 
     class Meta:
         ordering = ['-last_updated']
+        verbose_name_plural = "Site Info"
         
 
 class AboutImage(models.Model):
@@ -37,5 +38,5 @@ class AboutImage(models.Model):
     
     class Meta:
         ordering = ['-date_created']
-    
+        verbose_name_plural = "About Image"
     

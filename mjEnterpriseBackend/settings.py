@@ -136,8 +136,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CKEDITOR
 
-CKEDITOR_CONFIGS = {
-    'awesome_ckeditor': {
-        'toolbar': 'Basic',
-    },
-}
+    # CKEDITOR_CONFIGS = {
+    #     'awesome_ckeditor': {
+    #         'toolbar': 'Basic',
+    #     },
+    # }
