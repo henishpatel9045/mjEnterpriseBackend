@@ -8,8 +8,8 @@ class ReceivedMessagesAdmin(admin.ModelAdmin):
     list_display = ["id", "name", "date_created", "response_sent"]
     # readonly_fields = ["name", "email", "phone_number", "message", "ip_address"]
     
-    def response_sent(self, msg):
-        if len(msg.response) > 0:
+    def response_sent(self, msg): 
+        if msg.response:
             return "Yes"
         return "No"
     

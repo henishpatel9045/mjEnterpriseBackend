@@ -17,6 +17,11 @@ class SiteInfo(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
     
+    def save(self, *args, **kwargs):
+        if SiteInfo.objects.count() == 1:
+            SiteInfo.objects.all().delete()
+        return super().save(*args, **kwargs)
+    
     def __str__(self):
         return self.businessName
 
