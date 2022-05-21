@@ -1,8 +1,9 @@
-from django.db import models
 from ckeditor import fields
-from django.forms import CharField
-from .utils import send_single_mail
+from django.db import models
 from django.db.transaction import atomic
+from django.forms import CharField
+
+from .utils import send_single_mail
 
 # Create your models here.
 
@@ -15,19 +16,18 @@ class ReceivedMessages(models.Model):
     ip_address = models.CharField(max_length=150, null=True, blank=True)
     response = fields.RichTextField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
-    
-    
+
     def __str__(self):
         return str(self.id) + self.name
-    
+
     class Meta:
         ordering = ["response"]
-    
-    
+
+
 class NewsLetterSubscriber(models.Model):
     email = models.EmailField(unique=True)
     date_created = models.DateTimeField(auto_now_add=True)
-    
+
     def save(self, *args, **kwargs):
         with atomic():
             # send_single_mail(["ompatel9045@gmail.com"], "New Subscriber added.", "New subscriber added to newsletter subscriber list.")
@@ -35,7 +35,7 @@ class NewsLetterSubscriber(models.Model):
 
     def __str__(self):
         return self.email
-    
+
 
 class SendMail(models.Model):
     subject = models.CharField(max_length=200, blank=True, null=True)
@@ -50,7 +50,4 @@ class SendMail(models.Model):
             return super().save(*args, **kwargs)
 
     def __str__(self):
-        return str(self.id) + self.subject 
-    
-    
-    
+        return str(self.id) + self.subject

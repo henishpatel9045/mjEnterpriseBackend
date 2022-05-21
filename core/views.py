@@ -1,8 +1,9 @@
-from . import models, serializers
+from django.http import JsonResponse
+from django.middleware.csrf import get_token
 from rest_framework.mixins import ListModelMixin
 from rest_framework.viewsets import GenericViewSet
-from django.middleware.csrf import get_token
-from django.http import JsonResponse
+
+from . import models, serializers
 
 # Create your views here.
 
