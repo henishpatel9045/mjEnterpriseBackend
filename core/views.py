@@ -1,6 +1,8 @@
 from . import models, serializers
 from rest_framework.mixins import ListModelMixin
 from rest_framework.viewsets import GenericViewSet
+from django.middleware.csrf import get_token
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -18,6 +20,10 @@ from rest_framework.viewsets import GenericViewSet
         
 #     else:
 #         return Response("Only get method allowed on this endpoint.", status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+def csrf(req):
+    return JsonResponse({"csrf": get_token(req)})
 
 
 class SiteInfoViewSet(ListModelMixin, GenericViewSet):
@@ -45,3 +51,7 @@ class AboutImageViewSet(ListModelMixin, GenericViewSet):
     queryset = models.AboutImage.objects.all()
     serializer_class = serializers.AboutImageSerializer
     
+
+class OffersViewSet(ListModelMixin, GenericViewSet):
+    queryset = models.Offers.objects.filter(is_listed=True).all()
+    serializer_class = serializers.OffersSerializer

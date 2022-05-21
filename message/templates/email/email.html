@@ -1,0 +1,68 @@
+ {% load static %} {% block subject %}{{subject}}{% endblock %} {% block html_body %}
+
+ <header
+   style="
+     max-width: 100vw;
+     height: 150px;
+     display: inherit;
+     align-items: center;
+     text-align: center;
+     color: white;
+     justify-content: center;
+     background-color: rgb(81, 59, 96);
+   "
+ >
+<h1>MJ Enterprise</h1>
+</header>
+ <div
+ class="root"
+ style="
+ max-width: 100vw;
+ min-height: 100vh;
+ height: 100%;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ "
+ >
+  <div class="content" style="flex: 1;
+    width: 100vw;
+    padding: 2rem 2.5rem;
+    background-color: bisque;
+    line-height: 1.2rem;
+    font-size: 1rem;">{{body |safe}}</div>
+</div>
+<footer style="display: inherit;
+  flex-direction: column;
+  row-gap: 1rem;
+  -webkit-row-gap: 1rem;
+  align-items: center;
+  width: 100vw;
+  padding: 2rem 0;">
+  <a href="http://bit.ly/mjEnterprise" style="color: black; transition: all 0.2s"
+  onMouseOver="this.style.color='gray'"
+ onMouseOut="this.style.color='black'">Visit Our Site</a>
+  <span style=" display: inherit;
+  column-gap: 1rem;"
+    ><a style="color: black" href="" class="socials"
+      ><img
+        style="width: 4rem; height: 4rem"
+        src="https://png.pngtree.com/element_our/sm/20180626/sm_5b321c99945a2.jpg"
+        alt="Whatsapp"
+    /></a>
+    <a href="" class="socials" style="color: black"
+      ><img
+        src="https://png.pngtree.com/png-clipart/20181003/ourmid/pngtree-facebook-logo-facebook-icon-png-image_3654755.png"
+        alt="Facebook"
+        style="width: 4rem; height: 4rem"
+    /></a>
+    <a href="" class="socials" style="color: black"
+      ><img
+        src="https://png.pngtree.com/png-clipart/20180626/ourmid/pngtree-instagram-icon-instagram-logo-png-image_3584853.png"
+        alt="Instagram"
+        style="width: 4rem; height: 4rem"
+    /></a>
+  </span>
+</footer>
+
+{% endblock %} 

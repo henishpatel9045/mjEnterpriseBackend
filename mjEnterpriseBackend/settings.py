@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "corsheaders",
     "debug_toolbar",
     "rest_framework",
     "django_cleanup",
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,6 +61,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if DEBUG and True:
+    MIDDLEWARE += ['silk.middleware.SilkyMiddleware']
+    INSTALLED_APPS += ['silk']
 
 ROOT_URLCONF = 'mjEnterpriseBackend.urls'
 
@@ -143,3 +149,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
     #         'toolbar': 'Basic',
     #     },
     # }
+
+
+# EMAIL CONFIGURATION
+
+DEFAULT_FROM_EMAIL = "mjenterprise.newsletter@gmail.com"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "devilpatidar9045@gmail.com"
+EMAIL_HOST_PASSWORD = "1101979Om%"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+CORS_ALLOW_ALL_ORIGINS = True

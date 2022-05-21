@@ -12,5 +12,9 @@ class AboutImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutImage
         fields = "__all__"
-        
-        
+
+
+class OffersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Offers
+        fields = ["id", "title", 'image', 'description', "link", "is_listed"]

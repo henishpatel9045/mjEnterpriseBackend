@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.viewsets import GenericViewSet
 from . import models, serializers
+from .utils import send_single_mail
 
 # Create your views here.
 class ReceivedMessageViewSet(CreateModelMixin, GenericViewSet):
@@ -14,4 +15,5 @@ class ReceivedMessageViewSet(CreateModelMixin, GenericViewSet):
 class NewsletterSubscriberViewSet(CreateModelMixin, GenericViewSet):
     queryset = models.NewsLetterSubscriber.objects.all()
     serializer_class = serializers.NewsletterSubscriberSerializer
+    
     

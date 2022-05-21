@@ -10,6 +10,9 @@ django-ckeditor = "*"
 django-debug-toolbar = "*"
 djangorestframework = "*"
 django-cleanup = "*"
+django-templated-mail = "*"
+django-cors-headers = "*"
+django-silk = "*"
 
 [requires]
 python_version = "3.10"

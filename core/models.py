@@ -45,3 +45,19 @@ class AboutImage(models.Model):
         ordering = ['-date_created']
         verbose_name_plural = "About Image"
     
+
+class Offers(models.Model):
+    title = models.CharField(max_length=150)
+    image = models.ImageField(upload_to="offers")
+    description = fields.RichTextField()
+    link = models.URLField(null=True, blank=True)
+    is_listed = models.BooleanField(default=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['last_updated', 'date_created']
+        verbose_name_plural = 'Offers'
