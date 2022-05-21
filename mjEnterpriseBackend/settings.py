@@ -5,11 +5,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-4kymqstlh@+u9-tg6*cfg#ql5%)e84oo986e6k=$2*ptsfc!48'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["mjenterprise-backend.herokuapp.com"]
 
 INTERNAL_IPS = [
     '127.0.0.1'
