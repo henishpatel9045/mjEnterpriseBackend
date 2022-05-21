@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["mjenterprise-backend.herokuapp.com"]
 
@@ -44,9 +44,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if DEBUG and True:
-    MIDDLEWARE += ['silk.middleware.SilkyMiddleware']
-    INSTALLED_APPS += ['silk']
+# if DEBUG and True:
+#     MIDDLEWARE += ['silk.middleware.SilkyMiddleware']
+#     INSTALLED_APPS += ['silk']
 
 ROOT_URLCONF = 'mjEnterpriseBackend.urls'
 
