@@ -12,6 +12,7 @@ django-cleanup = "*"
 django-templated-mail = "*"
 django-cors-headers = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.10"
