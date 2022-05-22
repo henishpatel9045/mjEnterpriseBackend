@@ -9,7 +9,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["mjenterprise-backend.herokuapp.com"]
+ALLOWED_HOSTS = ["mjenterprise-backend.herokuapp.com",
+                 "localhost", "127.0.0.1"]
 
 INTERNAL_IPS = [
     '127.0.0.1'
