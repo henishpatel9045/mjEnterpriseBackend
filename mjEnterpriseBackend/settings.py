@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["mjenterprise-backend.herokuapp.com",
                  "localhost", "127.0.0.1"]
@@ -137,7 +137,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # EMAIL CONFIGURATION
 
-DEFAULT_FROM_EMAIL = "mjenterprise.newsletter@gmail.com"
+DEFAULT_FROM_EMAIL = "mjenterprise.messenger@gmail.com"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = os.environ.get("EMAIL_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
